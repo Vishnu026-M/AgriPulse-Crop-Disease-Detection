@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 150 20% 4%;
+    --foreground: 140 20% 95%;
+    --card: 150 15% 7%;
+    --card-foreground: 140 20% 95%;
+    --popover: 150 15% 7%;
+    --popover-foreground: 140 20% 95%;
+    --primary: 152 76% 48%;
+    --primary-foreground: 150 30% 4%;
+    --secondary: 150 12% 12%;
+    --secondary-foreground: 140 20% 90%;
+    --muted: 150 10% 14%;
+    --muted-foreground: 150 10% 55%;
+    --accent: 160 70% 40%;
+    --accent-foreground: 150 30% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 10% 16%;
+    --input: 150 10% 16%;
+    --ring: 152 76% 48%;
+    --chart-1: 152 76% 48%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 170 50% 38%;
+    --chart-4: 140 55% 50%;
+    --chart-5: 180 45% 42%;
+    --radius: 0.75rem;
+    --sidebar-background: 150 15% 6%;
+    --sidebar-foreground: 140 20% 90%;
+    --sidebar-primary: 152 76% 48%;
+    --sidebar-primary-foreground: 150 30% 4%;
+    --sidebar-accent: 150 12% 12%;
+    --sidebar-accent-foreground: 140 20% 90%;
+    --sidebar-border: 150 10% 16%;
+    --sidebar-ring: 152 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(16, 32, 22, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(74, 222, 128, 0.1);
+}
+
+.glass-light {
+  background: rgba(16, 32, 22, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 222, 128, 0.08);
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(74, 222, 128, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(74, 222, 128, 0.3); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Scroll fade-in */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Particle drift */
+@keyframes drift {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(var(--drift-x, 100px), var(--drift-y, -200px)) rotate(360deg); opacity: 0; }
+}
+
+.animate-drift {
+  animation: drift var(--drift-duration, 12s) linear infinite;
+}
+
+/* Scanning line */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-scan {
+  animation: scan 4s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(150 15% 7%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(152 76% 48% / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(152 76% 48% / 0.5);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
