@@ -16,9 +16,9 @@ Base.metadata.create_all(bind=engine)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "http://localhost:3000",
-    "https://your-vercel-app.vercel.app"
-],
+        "http://localhost:3000",
+        "https://agri-pulse-crop-disease-detection.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
