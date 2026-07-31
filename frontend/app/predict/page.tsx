@@ -55,7 +55,7 @@ const handleImageSelect = useCallback((selectedFile: File, dataUrl: string) => {
     const formData = new FormData()
     formData.append("file", file)
 
-    const response = await fetch("http://127.0.0.1:8000/predict", {
+   const response = await fetch("https://agripulse-backend-01ip.onrender.com/predict", {
       method: "POST",
       body: formData,
     })
