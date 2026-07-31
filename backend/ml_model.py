@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "crop_disease_model.h5")
+MODEL_PATH = os.path.join(BASE_DIR, "crop_disease_model.keras")
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
