@@ -72,6 +72,7 @@ model.fit(
     epochs=EPOCHS
 )
 
-model.save("crop_disease_model.h5")
+model.save("crop_disease_model.keras")
+model.save_weights("crop_disease_model.weights.h5")
 
-print("\nModel Saved Successfully!")
+print("Model and weights saved successfully!")
